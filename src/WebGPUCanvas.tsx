@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { DrawGeometry } from "./chapters/DrawGeometry";
+import { DrawGrid } from "./chapters/DrawGrid";
 
 function WebGPUCanvas() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -10,8 +10,10 @@ function WebGPUCanvas() {
         // InitializeWebGPU(canvasRef.current);
 
         // Codelab Step 4
-        DrawGeometry(canvasRef.current);
-        // CODE
+        // DrawGeometry(canvasRef.current);
+
+        // Codelab Step 5
+        DrawGrid(canvasRef.current);
     }, []);
 
     return (

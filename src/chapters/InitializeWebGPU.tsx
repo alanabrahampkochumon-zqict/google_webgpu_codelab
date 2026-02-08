@@ -12,6 +12,9 @@ export default async function InitializeWebGPU(
     const context = canvas.getContext("webgpu");
     if (!context) throw new Error("Context not initialized");
 
+    canvas.width = canvas.clientWidth * (window.devicePixelRatio || 1);
+    canvas.height = canvas.clientHeight * (window.devicePixelRatio || 1);
+
     const canvasFormat = navigator.gpu.getPreferredCanvasFormat(); // Texture format
 
     context.configure({
