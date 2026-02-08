@@ -1,4 +1,4 @@
-export default async function initWebGPU(
+export default async function InitializeWebGPU(
     canvas: HTMLCanvasElement,
 ): Promise<GPUCanvasContext> {
     if (!navigator.gpu)

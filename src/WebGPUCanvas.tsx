@@ -1,13 +1,16 @@
 import { useEffect, useRef } from "react";
-import initWebGPU from "./initWebGPU";
+import { DrawGeometry } from "./chapters/DrawGeometry";
 
 function WebGPUCanvas() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         if (!canvasRef.current) return;
+        // Codelab Step 3
+        // InitializeWebGPU(canvasRef.current);
 
-        initWebGPU(canvasRef.current);
+        // Codelab Step 4
+        DrawGeometry(canvasRef.current);
         // CODE
     }, []);
 
