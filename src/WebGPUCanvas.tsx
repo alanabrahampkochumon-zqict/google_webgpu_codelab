@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { DrawGrid } from "./chapters/DrawGrid";
+import { CellState } from "./chapters/CellState";
 
 function WebGPUCanvas() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -12,8 +12,16 @@ function WebGPUCanvas() {
         // Codelab Step 4
         // DrawGeometry(canvasRef.current);
 
-        // Codelab Step 5
-        DrawGrid(canvasRef.current);
+        // Codelab Step 5 & 6
+        // DrawGrid(canvasRef.current);
+
+        let cleanUp: () => void;
+        async function init() {
+            cleanUp = await CellState(canvasRef.current!);
+        }
+        init();
+
+        return () => cleanUp && cleanUp();
     }, []);
 
     return (
